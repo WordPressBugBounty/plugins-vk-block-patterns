@@ -198,7 +198,9 @@ function vbp_vws_alert_list() {
 	$free_notice .= '設定されたメールアドレスと連携している <a href="https://vws.vektor-inc.co.jp/my-account/license" target="_blank" rel="noopener noreferrer">VWSアカウント</a> はライセンスの期限が切れているためお気に入り機能などがご利用できなくなっています。ライセンスの再購入をご検討ください。';
 	$free_notice .= '</p>';
 	$free_notice .= '<p>';
-	$free_notice .= '<a href="https://vws.vektor-inc.co.jp/product/lightning-g3-pro-pack" class="button button-primary" target="_blank" rel="noopener noreferrer">Lightning G3 Pro Pack</a>';
+	$free_notice .= '<a href="https://vws.vektor-inc.co.jp/product/vektor-passport-1y" class="button button-primary" target="_blank" rel="noopener noreferrer">Vektor Passport</a>';
+	$free_notice .= ' ';
+	$free_notice .= '<a href="' . admin_url('options-general.php?page=vk_block_patterns_options' ) . '" class="button button-primary" rel="noopener noreferrer">連携メールアドレスの確認</a>';
 	$free_notice .= ' ';
 	$free_notice .= '<a href="' . $current_url . $url_next . 'disable-free-notice" class="button button-secondary">' . __( 'Dismiss', 'vk-block-patterns' ) . '</a>';
 	$free_notice .= '</p>';
@@ -292,7 +294,7 @@ add_action( 'admin_init', 'vbp_admin_control' );
  /**
   * API連携で取得したパターンデータのキャッシュを削除
   * Delete Cache Pattern Data from API
-  */
+ */
 function vbp_clear_patterns_cache( $test_mode = false ) {
 	// nonce を検証する
 	if ( false === $test_mode ) {
@@ -301,11 +303,22 @@ function vbp_clear_patterns_cache( $test_mode = false ) {
 		}
 	}
 	// オプションを変更できるユーザーのみがアクセスできるように制限
-	if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) {		
+	if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) {
+		$cached_keys = get_option( 'vk_patterns_api_cached_keys', array() );
+
+		if ( is_array( $cached_keys ) ) {
+			foreach ( $cached_keys as $cached_key ) {
+				delete_transient( $cached_key );
+			}
+		}
+
+		// 互換性のため旧キーも削除.
 		delete_transient( 'vk_patterns_api_data' );
+		update_option( 'vk_patterns_api_cached_keys', array() );
+
 		if ( false === $test_mode ) {
 			die();
-		}		
+		}
 	} elseif ( false === $test_mode ) {
 		// アクセスが拒否された場合の処理
 		wp_die( 'Unauthorized', 'Unauthorized', array( 'response' => 401 ) );
