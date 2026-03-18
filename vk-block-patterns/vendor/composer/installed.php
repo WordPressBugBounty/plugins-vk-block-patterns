@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'vektor/vk-block-patterns',
-        'pretty_version' => '1.34.6.1',
-        'version' => '1.34.6.1',
-        'reference' => '89317e7d651055560528e525595288b4c221bd1b',
+        'pretty_version' => '1.35.0',
+        'version' => '1.35.0.0',
+        'reference' => '2e89073b1eeffdbc253394479cbe613c0ba3fa1c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'vektor/vk-block-patterns' => array(
-            'pretty_version' => '1.34.6.1',
-            'version' => '1.34.6.1',
-            'reference' => '89317e7d651055560528e525595288b4c221bd1b',
+            'pretty_version' => '1.35.0',
+            'version' => '1.35.0.0',
+            'reference' => '2e89073b1eeffdbc253394479cbe613c0ba3fa1c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
