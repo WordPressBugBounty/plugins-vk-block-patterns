@@ -15,6 +15,9 @@ When you activate this plugin that create new custom post type for custom block 
 
 == Changelog ==
 
+= 1.35.1 =
+[ Bug Fix ] Fix pattern images being corrupted during dist build process due to Gulp 5 encoding change
+
 = 1.35.0 =
 [ Add Function ] Enable theme patterns for all themes, not only X-T9.
 
