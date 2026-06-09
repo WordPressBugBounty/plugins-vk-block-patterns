@@ -5,6 +5,7 @@ Tags: Guternberg, Block Pattern
 Requires at least: 6.5
 Tested up to: 6.9
 Requires PHP: 7.4
+Stable tag: 1.36.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +15,13 @@ You can make and register your original custom block patterns.
 When you activate this plugin that create new custom post type for custom block patterns. If you register custom patterns that you can select registered block patterns on edit screen.
 
 == Changelog ==
+
+= 1.36.0 =
+[ Specification change ] Update Block Patterns
+[ Specification change ] Migrate meta box to block editor native sidebar panel for WordPress 7.0 RTC (Real-Time Collaboration) compatibility.
+
+= 1.35.2 =
+[ Bug Fix ] Fix dist zip structure containing incorrect dist/ prefix path
 
 = 1.35.1 =
 [ Bug Fix ] Fix pattern images being corrupted during dist build process due to Gulp 5 encoding change
