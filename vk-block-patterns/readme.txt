@@ -2,10 +2,10 @@
 Contributors: vektor-inc,kurudrive,rickaddison7634,kaorock72,una9,shimotomoki,doshimaf
 Donate link:
 Tags: Guternberg, Block Pattern
-Requires at least: 6.5
-Tested up to: 6.9
+Requires at least: 6.7
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.36.0
+Stable tag: 1.37.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,21 @@ You can make and register your original custom block patterns.
 When you activate this plugin that create new custom post type for custom block patterns. If you register custom patterns that you can select registered block patterns on edit screen.
 
 == Changelog ==
+
+= 1.37.0 =
+[ Specification change ] Removed custom classes from patterns where they are no longer needed due to core and plugin updates.
+
+[ Specification change ] Unified the "Fit columns" breakpoint at 782px so columns stack the same way as core columns.
+
+[ Specification change ] Removed the "vk-cols--media" custom class from patterns, as the same layout is now achievable with core blocks; the CSS itself is kept so existing users are unaffected.
+
+[ Bug Fix ] Fixed an issue where the vbp-editor-panel script was loaded on the widget editor screen, causing a PHP notice about wp-editor being enqueued.
+
+[ Bug Fix ] Fixed the settings screen admin CSS/JS not refreshing in the browser after an update, and the left sidebar navigation being clipped when admin notices appear.
+
+[ Bug Fix ] Fixed the "half content width" column layout where spacing was unexpectedly removed between 600px and 782px, causing columns to stick together.
+
+[ Bug Fix ] Fixed the editor preview where the "Reverse columns" option was applied below 782px instead of at 782px and above, so it now matches the front-end column layout.
 
 = 1.36.0 =
 [ Specification change ] Update Block Patterns
