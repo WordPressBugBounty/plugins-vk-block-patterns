@@ -5,7 +5,7 @@ Tags: Guternberg, Block Pattern
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.38.0
+Stable tag: 1.39.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,9 @@ You can make and register your original custom block patterns.
 When you activate this plugin that create new custom post type for custom block patterns. If you register custom patterns that you can select registered block patterns on edit screen.
 
 == Changelog ==
+
+= 1.39.0 =
+[ Specification change ] Removed the "vk-cols--reverse" and "vk-cols--hasbtn" custom classes from patterns, using core block features instead; the CSS itself is kept so existing users are unaffected.
 
 = 1.38.0 =
 [ Specification change ] Reverted the "Fit columns" breakpoint unification introduced in 1.37.0, restoring the previous 600px/782px breakpoints.
